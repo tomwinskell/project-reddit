@@ -24,11 +24,10 @@ main.addEventListener('click', (e) => {
 
 function addComment(eventTarget) {
   const formEl = eventTarget.closest('form');
-  const parent = eventTarget.closest('.card-body')
   const obj = getFormInput(formEl);
   const comment = buildFragment([{type: 'p'}]);
   comment.querySelector('p').innerText = `${obj.comment} - Posted by: ${obj.name}`;
-  parent.insertBefore(comment, formEl);
+  formEl.insertBefore(comment, formEl.firstChild);
 }
 
 function getFormInput(formElement) {
