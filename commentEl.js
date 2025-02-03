@@ -1,18 +1,18 @@
 export const commentEl = [
   {
-    type: 'div',
-    attributes: { class: 'm-3 d' },
+    type: 'form',
+    attributes: { class: 'mt-2 d-none comment-form' },
     children: [
       {
         type: 'div',
-        attributes: { class: 'mb-3' },
+        attributes: { class: 'mb-2' },
         children: [
           {
             type: 'input',
             attributes: {
               type: 'text',
               name: 'name',
-              placeholder: 'name',
+              placeholder: 'Name',
               class: 'form-control',
             },
           },
@@ -20,14 +20,14 @@ export const commentEl = [
       },
       {
         type: 'div',
-        attributes: { class: 'mb-3' },
+        attributes: { class: 'mb-2' },
         children: [
           {
             type: 'input',
             attributes: {
               type: 'text',
               name: 'comment',
-              placeholder: 'comment',
+              placeholder: 'Comment',
               class: 'form-control',
             },
           },
@@ -35,7 +35,7 @@ export const commentEl = [
       },
       {
         type: 'button',
-        attributes: { class: 'btn btn-primary' },
+        attributes: { class: 'btn btn-primary add-comment' },
         children: ['Comment'],
       },
     ],

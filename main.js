@@ -8,19 +8,31 @@ const postForm = document.querySelector('.post-form');
 main.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.classList.contains('add-post')) {
-    posts.appendChild(createPostEl(getPostInput()));
+    posts.appendChild(createPostEl(getFormInput(postForm)));
     clearInput();
   }
   if (e.target.classList.contains('delete-btn')) {
-    
+    deletePost(e.target);
   }
   if (e.target.classList.contains('show-comments')) {
     showComments(e.target);
   }
+  if (e.target.classList.contains('add-comment')) {
+    addComment(e.target);
+  }
 });
 
-function getPostInput() {
-  return Array.from(postForm.querySelectorAll('.form-control')).reduce(
+function addComment(eventTarget) {
+  const formEl = eventTarget.closest('form');
+  const parent = eventTarget.closest('.card-body')
+  const obj = getFormInput(formEl);
+  const comment = buildFragment([{type: 'p'}]);
+  comment.querySelector('p').innerText = `${obj.comment} - Posted by: ${obj.name}`;
+  parent.insertBefore(comment, formEl);
+}
+
+function getFormInput(formElement) {
+  return Array.from(formElement.querySelectorAll('.form-control')).reduce(
     (struct, current) => {
       struct[current.name] = current.value;
       return struct;
@@ -40,13 +52,21 @@ function createPostEl(obj) {
   el.querySelector('.card-title').innerText = `${obj.title}`;
   el.querySelector('.card-subtitle').innerText = `Posted by: ${obj.name}`;
   el.querySelector('.card-text').innerText = `${obj.text}`;
-  el.lastChild.appendChild(buildFragment(commentEl));
+  el.querySelector('.card-body').appendChild(buildFragment(commentEl));
   return el;
 }
 
 function showComments(eventTarget) {
-  if (eventTarget.classList.contains('d-none'))
-  console.log(event)
+  const cl = eventTarget.nextSibling.classList;
+  if (cl.contains('d-none')) {
+    cl.remove('d-none');
+  } else {
+    cl.add('d-none');
+  }
+}
+
+function deletePost(eventTarget) {
+  eventTarget.closest('.card').remove();
 }
 
 function buildFragment(arrayObj) {
