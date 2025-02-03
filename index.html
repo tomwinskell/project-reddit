@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
+    <html lang="en">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -18,26 +18,29 @@
     ></script>
   </head>
   <body>
-    <div class="main">
-  
-      <form>
+    <div class="main d-flex flex-column p-5">
+      <h1>ReReddit</h1>
+      <div class="posts">
+      </div>
+      <form class="post-form">
         <div class="mb-3">
           <input
             type="text"
             class="form-control"
-            id="exampleInputEmail1"
+            name="text"
+            placeholder="text"
           />
         </div>
         <div class="mb-3">
           <input
             type="text"
             class="form-control"
-            id="exampleInputPassword1"
+            name="name"
+            placeholder="name"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary add-post">Submit</button>
       </form>
-      
     </div>
   </body>
 </html>
