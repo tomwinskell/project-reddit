@@ -22,7 +22,7 @@
       <h1>ReReddit</h1>
       <div class="posts">
       </div>
-      <form class="post-form">
+      <form class="post-form needs-validation">
         <h3>Add a post</h3>
         <div class="mb-2">
           <input
@@ -30,10 +30,23 @@
             class="form-control"
             name="title"
             placeholder="Post Title"
+            required
           />
+          <div class="invalid-feedback">
+            Please provide a post title.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
         <div class="form-floating mb-2">
-          <textarea class="form-control" placeholder="Write your post here..." name="text" style="height: 100px"></textarea>
+          <textarea class="form-control" placeholder="Write your post here..." name="text" style="height: 100px" required></textarea>
+          <div class="invalid-feedback">
+            Post must be between 5 and 200 characters.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
         <div class="mb-2">
           <input
@@ -41,7 +54,14 @@
             class="form-control"
             name="name"
             placeholder="Name"
+            required
           />
+          <div class="invalid-feedback">
+            Please provide a name.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
         <button class="btn btn-primary add-post">Add Post</button>
       </form>

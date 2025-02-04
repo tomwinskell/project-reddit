@@ -1,7 +1,7 @@
 export const commentTemplate = [
   {
     type: 'form',
-    attributes: { class: 'mt-2 d-none comment-form' },
+    attributes: { class: 'mt-2 d-none needs-validation comment-form' },
     children: [
       {
         type: 'div',
@@ -14,7 +14,22 @@ export const commentTemplate = [
               name: 'name',
               placeholder: 'Name',
               class: 'form-control',
+              required: true,
             },
+          },
+          {
+            type: 'div',
+            attributes: {
+              class: 'invalid-feedback',
+            },
+            children: ['Please provide a name.'],
+          },
+          {
+            type: 'div',
+            attributes: {
+              class: 'valid-feedback',
+            },
+            children: ['Looks good.'],
           },
         ],
       },
@@ -29,7 +44,22 @@ export const commentTemplate = [
               name: 'comment',
               placeholder: 'Comment',
               class: 'form-control',
+              required: true,
             },
+          },
+          {
+            type: 'div',
+            attributes: {
+              class: 'invalid-feedback',
+            },
+            children: ['Please provide a name.'],
+          },
+          {
+            type: 'div',
+            attributes: {
+              class: 'valid-feedback',
+            },
+            children: ['Looks good.'],
           },
         ],
       },

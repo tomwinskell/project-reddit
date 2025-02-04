@@ -3,8 +3,10 @@ import { getFormInput } from './formMethods.js';
 export function buildConst(eventTarget, template) {
   const formEl = eventTarget.closest('form');
   const obj = getFormInput(formEl);
+  if (obj) {
   const el = buildFragment(template);
   return { formEl, obj, el };
+  }
 }
 
 export function buildFragment(arrayObj) {
