@@ -52,7 +52,7 @@ export const commentTemplate = [
             attributes: {
               class: 'invalid-feedback',
             },
-            children: ['Please provide a name.'],
+            children: ['Please provide a comment.'],
           },
           {
             type: 'div',
