@@ -1,4 +1,4 @@
-export const commentEl = [
+export const commentTemplate = [
   {
     type: 'form',
     attributes: { class: 'mt-2 d-none comment-form' },

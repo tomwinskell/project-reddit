@@ -1,4 +1,4 @@
-export const postEl = [
+export const postTemplate = [
   {
     type: 'div',
     attributes: { class: 'card mb-3' },
@@ -18,12 +18,18 @@ export const postEl = [
           { type: 'p', attributes: { class: 'card-text' } },
           {
             type: 'a',
-            attributes: { class: 'card-link delete-btn', style: 'cursor: pointer' },
+            attributes: {
+              class: 'card-link delete-btn',
+              style: 'cursor: pointer',
+            },
             children: ['Delete Post'],
           },
           {
             type: 'a',
-            attributes: { class: 'card-link show-comments', style: 'cursor: pointer' },
+            attributes: {
+              class: 'card-link show-comments',
+              style: 'cursor: pointer',
+            },
             children: ['Show Comments'],
           },
         ],
