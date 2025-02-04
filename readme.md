@@ -1,24 +1,5 @@
-# Simple Post & Comment App
+## Project Reddit
 
-This project provides a basic structure for creating, displaying, and managing posts and comments dynamically using JavaScript.
+This project has been created by a student at Parsity, an online software engineering course. The work in this repository is wholly of the student based on a sample starter project that can be accessed by looking at the repository that this project forks.
 
-## Features
-
-- Add new posts with a title, author, and text
-- Delete posts
-- Show/hide comments for each post
-- Add comments to posts
-
-## How It Works
-
-- Clicking **Add Post** creates a new post from the input fields.
-- Clicking **Delete** removes a post.
-- Clicking **Show Comments** toggles visibility of the comments section.
-- Clicking **Add Comment** adds a comment to the corresponding post.
-
-## File Structure
-
-- `index.html` - Main HTML file
-- `script.js` - Handles post and comment interactions
-- `commentEl.js` - Template for comment elements
-- `postEl.js` - Template for post elements
+If you have any questions about this project or the program in general, visit [parsity.io](https://parsity.io/) or email hello@parsity.io.
