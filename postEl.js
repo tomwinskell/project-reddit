@@ -18,13 +18,13 @@ export const postEl = [
           { type: 'p', attributes: { class: 'card-text' } },
           {
             type: 'a',
-            attributes: { class: 'card-link delete-btn' },
-            children: ['delete'],
+            attributes: { class: 'card-link delete-btn', style: 'cursor: pointer' },
+            children: ['Delete Post'],
           },
           {
             type: 'a',
-            attributes: { class: 'card-link show-comments' },
-            children: ['comments'],
+            attributes: { class: 'card-link show-comments', style: 'cursor: pointer' },
+            children: ['Show Comments'],
           },
         ],
       },

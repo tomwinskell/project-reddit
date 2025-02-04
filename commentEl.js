@@ -36,7 +36,7 @@ export const commentEl = [
       {
         type: 'button',
         attributes: { class: 'btn btn-primary add-comment' },
-        children: ['Comment'],
+        children: ['Add Comment'],
       },
     ],
   },

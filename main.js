@@ -9,7 +9,6 @@ main.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.classList.contains('add-post')) {
     posts.appendChild(createPostEl(getFormInput(postForm)));
-    clearInput();
   }
   if (e.target.classList.contains('delete-btn')) {
     deletePost(e.target);
@@ -31,17 +30,19 @@ function addComment(eventTarget) {
 }
 
 function getFormInput(formElement) {
-  return Array.from(formElement.querySelectorAll('.form-control')).reduce(
+  const input = Array.from(formElement.querySelectorAll('.form-control')).reduce(
     (struct, current) => {
       struct[current.name] = current.value;
       return struct;
     },
     {}
   );
+  clearInput(formElement);
+  return input;
 }
 
-function clearInput() {
-  postForm.querySelectorAll('.form-control').forEach((input) => {
+function clearInput(formElement) {
+  formElement.querySelectorAll('.form-control').forEach((input) => {
     input.value = '';
   });
 }
@@ -59,8 +60,10 @@ function showComments(eventTarget) {
   const cl = eventTarget.nextSibling.classList;
   if (cl.contains('d-none')) {
     cl.remove('d-none');
+    eventTarget.innerText = 'Hide Comments'
   } else {
     cl.add('d-none');
+    eventTarget.innerText = 'Show Comments'
   }
 }
 
