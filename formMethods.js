@@ -21,14 +21,3 @@ export function getFormInput(formEl) {
     });
   }
 }
-
-export function validateInput(eventTarget) {
-  const formEl = eventTarget.closest('form');
-  const arr = [];
-  formEl.querySelectorAll('.form-control').forEach((input) => {
-    if (input.value.length < 5 || input.value.length > 200) {
-      arr.push(false);
-    }
-  });
-  return arr.every((v) => v);
-}
